@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Mes Projets | Iliane el amrani"
+  description="Learn about Jeanine White's most recent projects"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      
+     
+		<h2 style="text-align:center;margin-bottom: 5px;margin-top: 15px;">PPE n°1</h2>
+    <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinq Boutons</title>
+    <style>
+        .bouton-container {
+            white-space: nowrap; /* Empêche le retour à la ligne automatique */
+            display:flex;
+            justify-content: center;
+            
+        }
+        a {
+            margin-left: 20px;
+        }
+        .bouton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%; /* Largeur fixe pour chaque bouton */
+        }
+    </style>
+</head>
+<body>
+    <div class="bouton-container">
+        <a href="/assets/Documentation technique PPE 1.pdf" target="_blank"><button class="bouton">Documentation technique</button> </a>
+        <a href="/assets/Rapport de Test PPE 1.pdf" target="_blank"><button class="bouton">Rapport de tests</button> </a>
+        <a href="/assets/Documentation utilisateur PPE 1.pdf" target="_blank"><button class="bouton">Documentation utilisateur</button> </a>
+        <a href="/assets/Fiche descriptive PPE 1.pdf" target="_blank"><button class="bouton">Fiche descriptive</button> </a>
+    </div>
+</body>
+</html>
+    <br>
+    <h2 style="text-align:center;margin-bottom: 86px;margin-top: 50px;">PPE n°2</h2>
+    <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinq Boutons</title>
+    <style>
+        .bouton-container {
+            white-space: nowrap; /* Empêche le retour à la ligne automatique */
+            display:flex;
+            justify-content: center;
+        }
+
+        .bouton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%; /* Largeur fixe pour chaque bouton */
+        }
+    </style>
+</head>
+<body>
+    <div class="bouton-container">
+        <a href="/assets/Documentation technique PPE 2.pdf" target="_blank"><button class="bouton">Documentation technique</button> </a>
+        <a href="/assets/Rapport de Test PPE 2.pdf" target="_blank"><button class="bouton">Rapport de tests</button> </a>
+        <a href="/assets/Documentation utilisateur PPE 2.pdf" target="_blank"><button class="bouton">Documentation utilisateur</button> </a>
+        <a href="/assets/Fiche descriptive PPE 2.pdf" target="_blank"><button class="bouton">Fiche descriptive</button> </a>
+    </div>
+</body>
+</html>
+		
+      
+      {/* Add title above "system" and "network" rectangles */}
+   
+  
+
+	  <div>
+		<h3 style="text-align:center;margin-bottom:10px;margin-top: 170px;">Qu'est ce que l'épreuve E5 🎓 ?</h3>
+				<p style="text-align:center; margin-bottom: 10px;">
+					L’épreuve E5 est une épreuve clé du BTS SIO, elle doit être composée de minimun deux projets ayant un contexte commun en rapport avec l’option choisie (SISR pour mon cas).
+				</p>
+				<p style="text-align:center; margin-bottom: 10px;">
+					L’objectif de cette épreuve est d’évaluer le candidat sur une des deux situations professionnelles qu’il aura réalisées sur les 2 ans de formation.
+				</p>
+				<p style="text-align:center; margin-bottom:40px;">
+					Cette épreuve est aussi accompagnée d'un tableau des compétences, compétences qui devront être décrites et réalisées au cours des projets présentés.
+				</p>
+
+        <div style="display: flex; justify-content:center;">
+          
+				<embed src="/assets/Tableau de synthèse des réalisations professionnelle.pdf" width="800" height="700"  type="application/pdf">
+        </div>
+		</div>
+      
+      {/* Add title above the two additional rectangles */}
+      
+      <Grid variant="offset">
+        {/* Add two additional rectangles */}
+        <li>
+          {/* Content of the first additional rectangle */}
+        </li>
+        <li>
+          {/* Content of the second additional rectangle */}
+        </li>
+      </Grid>
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
